@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakat Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5 mb-4">Zakat Calculator</h2>
+
+        <div class="form-group">
+            <label for="income">Annual Income (PKR)</label>
+            <input type="number" class="form-control" id="income" placeholder="Enter your annual income">
+        </div>
+
+        <div class="form-group">
+            <label for="savings">Total Savings (PKR)</label>
+            <input type="number" class="form-control" id="savings" placeholder="Enter your total savings">
+        </div>
+
+        <button class="btn btn-primary mb-3" onclick="calculateZakat()">Calculate Zakat</button>
+
+        <div id="result" class="alert alert-success" style="display:none;">
+            <strong>Zakat Amount:</strong> <span id="zakatAmount"></span> PKR
+        </div>
+    </div>
+
+    <script>
+        function calculateZakat() {
+            var income = document.getElementById('income').value;
+            var savings = document.getElementById('savings').value;
+
+            // Zakat calculation logic (customize as needed)
+            var zakatAmount = (parseFloat(income) + parseFloat(savings)) * 0.025;
+
+            // Display the result
+            document.getElementById('zakatAmount').innerText = zakatAmount.toFixed(2);
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
